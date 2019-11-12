@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# GPLv3, Evan Berkowitz, 2019
+# https://github.com/evanberkowitz/thirty-days-of-dead
+
 import requests
 import re
 from pathlib import Path
@@ -9,7 +12,8 @@ from mp3_tagger import MP3File, VERSION_BOTH
 
 ALBUM="30 Days of Dead 2019"
 ARTIST="Grateful Dead"
-DAYS=range(1,30) # 30 days hath ... November.  Also, it is THIRTY Days of Dead!
+# 30 days hath ... November.  Also, it is THIRTY Days of Dead!
+DAYS=range(1,31)    # ...but of course range goes to the end-1.
 
 def url(november):
     # This is the URL that you get if you look at "PAST DATES"
