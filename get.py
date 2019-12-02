@@ -53,7 +53,7 @@ for DAY in DAYS:
         continue
 
     SONG=f"{title} - {date} - {location}"
-    print(SONG)
+    print(f"Day {DAY:02}: {SONG}")
 
     # Download the remote file.
     file = Path(remote).name        # Figure out where to store it.
