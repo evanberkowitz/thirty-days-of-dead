@@ -9,8 +9,8 @@ from pathlib import Path
 import datetime
 from mp3_tagger import MP3File, VERSION_BOTH
 
-
-ALBUM="30 Days of Dead 2019"
+YEAR="2020"
+ALBUM=f"30 Days of Dead {YEAR}"
 ARTIST="Grateful Dead"
 # 30 days hath ... November.  Also, it is THIRTY Days of Dead!
 DAYS=range(1,31)    # ...but of course range goes to the end-1.
@@ -18,13 +18,13 @@ DAYS=range(1,31)    # ...but of course range goes to the end-1.
 def url(november):
     # This is the URL that you get if you look at "PAST DATES"
     # on https://www.dead.net/30daysofdead
-    return f"https://www.dead.net/30daysofdead/nov-{november:02d}-2019"
+    return f"https://www.dead.net/30daysofdead/nov-{november:02d}-{YEAR}"
 
 def parse(content):
     # With the page content in hand we need to extract the relevant information.
 
     # Most importantly, where does the mp3 live?
-    mp3 = re.findall(rb'http[s]?://rhino.*\.mp3', content)
+    mp3 = re.findall(rb'http[s]?://d2cstorage-a.akamaihd.net/.*\.mp3', content)
     mp3 = mp3[0].decode("utf-8")
 
     # What is the song's title?
