@@ -6,9 +6,7 @@ Let there be songs to fill the air!
 
 Once the day is over, the recording is made available in full for download.  This script helps you download these full-length recordings.  You can get every recording up to but excluding today.
 
-If you `pip3 install mp3_tagger` you should be able to run `get.py`.  By editing the `DAYS` variable you can download any span of days you desire.
-
-This script may not work in future years, but presumably all that would need changing is the `url` and `parse` functions, in the event that [dead.net][dead] changed their URL scheme or HTML formatting that allowed me to pull the info out of the page.
+If you `pip3 install mp3_tagger` you should be able to run `get.py`.
 
 ```
 usage: get.py [-h] [--year YEAR] [--day DAY] [--artist ARTIST] [--album ALBUM]
@@ -29,12 +27,20 @@ optional arguments:
                    organization you might want to change the artist. One example
                    would be 'The Grateful Dead' (with 'The')
   --album ALBUM    '30 Days of Dead 2021' by default.
-  --format FORMAT  A format string for the song name. Defaults to '{TITLE} - {DATE} -
-                   {LOCATION}'. Other possible fields are DAY, ALBUM, and ARTIST
+  --format FORMAT  A format string for the song name. 
+                   Defaults to '{TITLE} - {DATE} - {LOCATION}'.
+                   Other possible fields are DAY, ALBUM, and ARTIST
   --overwrite      If a song file already exists, redownload it nevertheless and
                    overwrite the old one.
   --verbose        Print a lot more information, used for debugging.
 ```
+
+# Album Art
+You've got to do it yourself; I'd wait until the end of the month.
+
+# Caveat Emptor
+
+This script may not work in future years, but presumably all that would need changing is the `url` and `parse` functions, in the event that [dead.net][dead] changed their URL scheme or HTML formatting that allowed me to pull the info out of the page.
 
 
 
